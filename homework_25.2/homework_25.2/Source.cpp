@@ -1,66 +1,65 @@
-//Card game Black Jack
-
+﻿//Card game Black Jack
 
 #include <iostream>
+#include <ostream>
 #include <time.h>
+
 using namespace std;
 
-
-class Black_Jack {
-private:
-
-
-public:
-	Black_Jack() {
-
-	}
-	~Black_Jack() { }
+struct Cards {
+	char suit;
+	char rank;
+	int points;
 };
 
-
-
-class Playing_Cards :public Black_Jack {
+class Black_Jack_game {
 private:
-	char suit;
-	int rank;
+public:
+	Black_Jack_game() {
+
+	}
+	~Black_Jack_game() { }
+};
+
+class Playing_Cards :public Black_Jack_game {
+private:
+	int points;
+	Cards cards[4][9];
 public:
 	Playing_Cards() {
-
+		Cards cards[2][9] = { { '6','7','8', '9', '10', 'J', 'Q', 'K', 'A' }, { 6, 7, 8, 9, 10, 2, 3, 4, 11 } };
+		
 	}
 	~Playing_Cards() { }
 
-
 };
 
-
-class Player :public Black_Jack {
+class Hand :public Black_Jack_game {
 private:
+
 
 
 public:
-	Player() {
-
+	Hand() {
 
 	}
-	~Player() { }
+	~Hand() { }
+
 };
 
-
-class Gambling_Table :public Black_Jack {
+class Gambling_Table :public Black_Jack_game {
 private:
-
 
 public:
 	Gambling_Table() {
-
 
 	}
 	~Gambling_Table() { }
 };
 
-
 int main() {
-
+	Playing_Cards a;
+	
 
 
 	return 0;
